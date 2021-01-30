@@ -6,6 +6,16 @@
   font-family: "Montserrat Alternates", sans-serif;
   color: #333;
 }
+
+.btn {
+  background: #276678;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 .navbar {
   padding: 20px;
   display: flex;
@@ -67,14 +77,14 @@
 .blog-details div {
   margin: 20px 0;
 }
-.blog-details button {
+/* .blog-details button {
   background: #276678;
   color: #fff;
   border: 0;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
-}
+} */
 
 /* create new blog form */
 .create {
@@ -108,4 +118,12 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.error-path {
+  margin-top: 1.5em;
+}
+
+.error-path a {
+  text-decoration: none;
 }
