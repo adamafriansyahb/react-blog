@@ -50,7 +50,7 @@ const Edit = () => {
     <div className="create">
       {blog && (
         <div>
-          <h2>Edit Blog</h2>
+          <h2 className="text-4xl mb-5">Edit Blog</h2>
           <form onSubmit={handleSubmit}>
             <label>Title:</label>
             <input
@@ -75,7 +75,9 @@ const Edit = () => {
               <option value="joko">joko</option>
               <option value="suseno">suseno</option>
             </select>
-            {!isPending && <button>Edit blog</button>}
+            {!isPending && (
+              <button className="btn btn-green mt-5">Edit blog</button>
+            )}
             {isPending && <button disabled>Editing blog...</button>}
           </form>
         </div>

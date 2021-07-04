@@ -24,13 +24,13 @@ const BlogDetails = () => {
       {error && <div>{error}</div>}
       {blog && (
         <article>
-          <h2>{blog.title}</h2>
-          <p>Written by: {blog.author}</p>
+          <h2 className="text-4xl mb-2">{blog.title}</h2>
+          <p className="text-base text-gray-700">Written by: {blog.author}</p>
           <div>{blog.body}</div>
-          <button className="btn" onClick={handleClick}>
+          <button className="btn btn-red mr-2" onClick={handleClick}>
             Delete
           </button>
-          <Link to={`/blogs/${id}/edit`} className="btn">
+          <Link to={`/blogs/${id}/edit`} className="btn btn-green">
             Edit
           </Link>
         </article>
