@@ -1,9 +1,10 @@
-import Navbar from './Navbar';
-import Home from './Home';
-import Create from './Create';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import BlogDetails from './BlogDetails';
-import NotFound from './NotFound';
+import Navbar from "./Navbar";
+import Home from "./Home";
+import Create from "./Create";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import BlogDetails from "./BlogDetails";
+import NotFound from "./NotFound";
+import Edit from "./Edit";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
             </Route>
             <Route path="/create">
               <Create />
+            </Route>
+            <Route path="/blogs/:id/edit">
+              <Edit />
             </Route>
             <Route path="/blogs/:id">
               <BlogDetails />
