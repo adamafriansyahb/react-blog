@@ -8,7 +8,7 @@
 * {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  color: #333;
+  color: black;
 }
 
 a {
@@ -36,9 +36,7 @@ a {
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
-.navbar h1 {
-  color: #276678;
-}
+
 .navbar .links {
   margin-left: auto;
 }
@@ -60,7 +58,7 @@ a {
 .blog-preview {
   padding: 10px 16px;
   margin: 20px 0;
-  border-bottom: 1px solid #fafafa;
+  /* border-bottom: 1px solid #fafafa; */
 }
 .blog-preview:hover {
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
@@ -81,9 +79,9 @@ a {
 }
 
 /* blog details page */
-.blog-details h2 {
+/* .blog-details h2 {
   color: #276678;
-}
+} */
 .blog-details div {
   margin: 20px 0;
 }
