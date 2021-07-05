@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import jwtDecode from "jwt-decode";
+import jwt_decode from "jwt-decode";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -26,11 +26,13 @@ const Login = () => {
     }
   };
 
-  //   useEffect(() => {
-  //     if (isAuthenticated()) history.push("/");
-  //   }, [isAuthenticated]);
+  // useEffect(() => {
+  //   if (isAuthenticated()) history.push("/");
+  // }, [isAuthenticated]);
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
     axios
       .post(`http://localhost:3000/api/auth/login`, {
         email: email,
@@ -39,17 +41,15 @@ const Login = () => {
       .then((res) => {
         const response = res.data;
         console.log("response", response);
-        const tokenData = jwtDecode(response);
-        localStorage.setItem("expiresIn", tokenData.exp * 1000);
-        localStorage.setItem("token", response);
-        history.push(`/`);
+        const tokenData = jwt_decode(response);
+        console.log(tokenData);
+        // localStorage.setItem("expiresIn", tokenData.exp * 1000);
+        // localStorage.setItem("token", response);
+        // history.push(`/`);
         // window.location.href = "/";
       })
       .catch(function (error) {
-        console.log("error", error.response);
-        if (error.response.status === 400) {
-          alert(error.response.data.Message);
-        }
+        console.log("error", error);
       });
   };
 
