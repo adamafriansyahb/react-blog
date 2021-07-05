@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 import jwt_decode from "jwt-decode";
+import instance from "./api/axiosInstance";
+export const axios = instance.apiInstance();
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -40,12 +41,13 @@ const Login = () => {
       })
       .then((res) => {
         const response = res.data;
+
         console.log("response", response);
         const tokenData = jwt_decode(response);
         console.log(tokenData);
         // localStorage.setItem("expiresIn", tokenData.exp * 1000);
-        // localStorage.setItem("token", response);
-        // history.push(`/`);
+        localStorage.setItem("token", response);
+        history.push(`/`);
         // window.location.href = "/";
       })
       .catch(function (error) {

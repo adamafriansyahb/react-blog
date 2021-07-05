@@ -24,11 +24,11 @@ const Home = () => {
 
   const history = useHistory();
 
-  useEffect(() => {
-    if (!isAuthenticated()) {
-      history.push("/login");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!isAuthenticated()) {
+  //     history.push("/login");
+  //   }
+  // }, []);
 
   const {
     data: blogs,
